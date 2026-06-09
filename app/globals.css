@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #3e7f93;
+  --brand-dark: #2d5f6b;
+  --brand-mid: #357d8f;
+  --brand-deep: #1e3a3f;
+  --accent-gold: #c4a35a;
+  --stone-50: #faf9f7;
+  --stone-100: #f3f1ed;
+  --text-body: #2a2a2a;
+  --text-muted: #5c5c5c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-stone-50 font-body text-text-body antialiased;
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+
+  .section-eyebrow-light {
+    @apply font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-gold;
+  }
+
+  .section-title {
+    @apply font-display text-3xl leading-tight text-brand-deep md:text-4xl lg:text-[2.75rem];
+  }
+
+  .section-title-light {
+    @apply font-display text-3xl leading-tight text-white md:text-4xl lg:text-[2.75rem];
+  }
+
+  .prose-body {
+    @apply font-body text-[15px] leading-[1.75] text-text-muted md:text-base;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-12 items-center justify-center rounded-sm bg-brand px-8 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+  }
+
+  .btn-outline-light {
+    @apply inline-flex min-h-12 items-center justify-center rounded-sm border border-white/60 px-8 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-white hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  }
+
+  .form-input {
+    @apply w-full rounded-sm border border-stone-200 bg-white px-4 py-3 font-body text-sm text-text-body outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20;
+  }
+
+  .form-label {
+    @apply mb-1.5 block font-body text-xs font-medium uppercase tracking-wide text-text-muted;
+  }
+
+  .card-surface {
+    @apply rounded-sm border border-stone-200 bg-white shadow-card;
+  }
+
+  .accent-line {
+    @apply h-px w-12 bg-accent-gold;
+  }
+
+  .accent-line-light {
+    @apply h-px w-12 bg-white/50;
+  }
+}
