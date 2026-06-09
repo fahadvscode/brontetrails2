@@ -47,37 +47,36 @@ export default function ExitIntent() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[60] hidden items-center justify-center bg-black/60 p-6 lg:flex"
+          className="fixed inset-0 z-[60] hidden items-center justify-center bg-ink/50 p-6 backdrop-blur-sm lg:flex"
           onClick={() => setShow(false)}
           role="dialog"
           aria-modal="true"
           aria-labelledby="exit-intent-title"
         >
           <motion.div
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            className="relative w-full max-w-md rounded-sm bg-brand-deep p-8 text-white shadow-elevated"
+            initial={{ scale: 0.95, opacity: 0, y: 16 }}
+            animate={{ scale: 1, opacity: 1, y: 0 }}
+            exit={{ scale: 0.95, opacity: 0, y: 16 }}
+            className="surface w-full max-w-md overflow-hidden shadow-float"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              type="button"
-              onClick={() => setShow(false)}
-              className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-sm text-white/60 hover:bg-white/10 hover:text-white"
-              aria-label="Close"
-            >
-              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <h2 id="exit-intent-title" className="font-display text-2xl text-white">
-              Wait — get your VIP package before the public launch.
-            </h2>
-            <p className="mt-2 font-body text-sm text-white/80">
-              Register now for Bronte Trails townhome floor plans, pricing, and
-              platinum access.
-            </p>
-            <div className="mt-6 rounded-sm bg-white p-5">
+            <div className="relative bg-brand px-8 py-6 text-white">
+              <button
+                type="button"
+                onClick={() => setShow(false)}
+                className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-white/70 hover:bg-white/10 hover:text-white"
+                aria-label="Close"
+              >
+                ✕
+              </button>
+              <h2 id="exit-intent-title" className="font-display text-2xl">
+                Before you go — secure VIP access
+              </h2>
+              <p className="mt-2 font-body text-sm text-white/80">
+                Register for Bronte Trails floor plans, pricing, and launch details.
+              </p>
+            </div>
+            <div className="p-6">
               <RegisterForm
                 formType="exit-intent"
                 onSuccess={() => setTimeout(() => setShow(false), 2000)}

@@ -8,10 +8,8 @@
   --brand-mid: #357d8f;
   --brand-deep: #1e3a3f;
   --accent-gold: #c4a35a;
-  --stone-50: #faf9f7;
-  --stone-100: #f3f1ed;
-  --text-body: #2a2a2a;
-  --text-muted: #5c5c5c;
+  --linen: #f7f4ef;
+  --ink: #1c2426;
 }
 
 html {
@@ -19,55 +17,47 @@ html {
 }
 
 body {
-  @apply bg-stone-50 font-body text-text-body antialiased;
+  @apply bg-sand font-body text-text-body antialiased;
 }
 
 @layer components {
-  .section-eyebrow {
-    @apply font-body text-xs font-semibold uppercase tracking-[0.18em] text-brand;
-  }
-
-  .section-eyebrow-light {
-    @apply font-body text-xs font-semibold uppercase tracking-[0.18em] text-accent-gold;
+  .section-tag {
+    @apply inline-flex items-center rounded-full bg-brand/10 px-3 py-1 font-body text-[11px] font-semibold uppercase tracking-[0.14em] text-brand;
   }
 
   .section-title {
-    @apply font-display text-3xl leading-tight text-brand-deep md:text-4xl lg:text-[2.75rem];
-  }
-
-  .section-title-light {
-    @apply font-display text-3xl leading-tight text-white md:text-4xl lg:text-[2.75rem];
+    @apply font-display text-[2rem] leading-[1.15] text-ink md:text-4xl lg:text-[2.65rem];
   }
 
   .prose-body {
-    @apply font-body text-[15px] leading-[1.75] text-text-muted md:text-base;
+    @apply font-body text-[15px] leading-[1.8] text-text-muted md:text-base;
   }
 
   .btn-primary {
-    @apply inline-flex min-h-12 items-center justify-center rounded-sm bg-brand px-8 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
+    @apply inline-flex min-h-[3rem] items-center justify-center rounded-full bg-brand px-7 font-body text-sm font-semibold text-white shadow-soft transition-all hover:bg-brand-dark hover:shadow-float focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
 
-  .btn-outline-light {
-    @apply inline-flex min-h-12 items-center justify-center rounded-sm border border-white/60 px-8 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors hover:bg-white hover:text-brand-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+  .btn-secondary {
+    @apply inline-flex min-h-[3rem] items-center justify-center rounded-full border-2 border-ink/15 bg-white px-7 font-body text-sm font-semibold text-ink transition-all hover:border-brand hover:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand;
   }
 
   .form-input {
-    @apply w-full rounded-sm border border-stone-200 bg-white px-4 py-3 font-body text-sm text-text-body outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20;
+    @apply w-full rounded-xl border border-ink/10 bg-white px-4 py-3 font-body text-sm text-ink outline-none transition-all placeholder:text-text-muted/40 focus:border-brand focus:ring-4 focus:ring-brand/10;
   }
 
   .form-label {
-    @apply mb-1.5 block font-body text-xs font-medium uppercase tracking-wide text-text-muted;
+    @apply mb-1.5 block font-body text-xs font-semibold text-ink/70;
   }
 
-  .card-surface {
-    @apply rounded-sm border border-stone-200 bg-white shadow-card;
+  .surface {
+    @apply rounded-2xl border border-ink/5 bg-white shadow-soft;
   }
 
-  .accent-line {
-    @apply h-px w-12 bg-accent-gold;
+  .surface-linen {
+    @apply rounded-2xl border border-ink/5 bg-linen shadow-soft;
   }
 
-  .accent-line-light {
-    @apply h-px w-12 bg-white/50;
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-2 font-body text-xs font-medium text-ink shadow-soft backdrop-blur-sm;
   }
 }

@@ -66,7 +66,7 @@ export default function RegisterForm({
   if (submitted) {
     return (
       <div className={`py-8 text-center ${className}`}>
-        <p className={`font-display text-2xl ${isDark ? "text-white" : "text-brand-deep"}`}>
+        <p className={`font-display text-2xl ${isDark ? "text-white" : "text-ink"}`}>
           Thank you!
         </p>
         <p className={`mt-2 font-body text-sm ${isDark ? "text-white/80" : "text-text-muted"}`}>
@@ -164,7 +164,7 @@ export default function RegisterForm({
       <fieldset>
         <legend className="form-label mb-2">Are you a broker?</legend>
         <div className="flex gap-3">
-          <label className="flex min-h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-sm border border-stone-200 bg-white px-4 py-2 text-sm transition-colors has-[:checked]:border-brand has-[:checked]:bg-brand/5">
+          <label className="flex min-h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white px-4 py-2 text-sm transition-colors has-[:checked]:border-brand has-[:checked]:bg-brand/5">
             <input
               type="radio"
               value="yes"
@@ -173,7 +173,7 @@ export default function RegisterForm({
             />
             <span>Yes</span>
           </label>
-          <label className="flex min-h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-sm border border-stone-200 bg-white px-4 py-2 text-sm transition-colors has-[:checked]:border-brand has-[:checked]:bg-brand/5">
+          <label className="flex min-h-12 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border border-ink/10 bg-white px-4 py-2 text-sm transition-colors has-[:checked]:border-brand has-[:checked]:bg-brand/5">
             <input
               type="radio"
               value="no"

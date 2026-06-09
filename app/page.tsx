@@ -9,6 +9,7 @@ import Caivan from "@/components/Caivan";
 import Investment from "@/components/Investment";
 import FAQ from "@/components/FAQ";
 import RegisterCTA from "@/components/RegisterCTA";
+import StickyRegisterSidebar from "@/components/StickyRegisterSidebar";
 import Footer from "@/components/Footer";
 import FloatingCTA from "@/components/FloatingCTA";
 import StickyFormShortcut from "@/components/StickyFormShortcut";
@@ -18,19 +19,24 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main>
-        <Hero />
-        <QuickFacts />
-        <Overview />
-        <Location />
-        <Schools />
-        <Amenities />
-        <Caivan />
-        <Investment />
-        <FAQ />
-        <RegisterCTA />
-      </main>
-      <Footer />
+      <div className="mx-auto flex max-w-shell justify-center">
+        <div className="min-w-0 flex-1">
+          <main>
+            <Hero />
+            <QuickFacts />
+            <Overview />
+            <Location />
+            <Schools />
+            <Amenities />
+            <Caivan />
+            <Investment />
+            <FAQ />
+            <RegisterCTA />
+          </main>
+          <Footer />
+        </div>
+        <StickyRegisterSidebar />
+      </div>
       <FloatingCTA />
       <StickyFormShortcut />
       <ExitIntent />

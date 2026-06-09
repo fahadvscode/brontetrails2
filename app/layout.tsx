@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { DM_Serif_Display, Inter } from "next/font/google";
+import { Playfair_Display, Source_Sans_3 } from "next/font/google";
 import Script from "next/script";
 import { IMAGES, SITE_URL } from "@/lib/constants";
 import {
@@ -11,18 +11,18 @@ import {
 } from "@/lib/schema";
 import "./globals.css";
 
-const dmSerif = DM_Serif_Display({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-dm-serif",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
   display: "swap",
   preload: true,
 });
 
-const inter = Inter({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  variable: "--font-source-sans",
   display: "swap",
   preload: true,
 });
@@ -86,7 +86,7 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <html lang="en-CA" className={`${dmSerif.variable} ${inter.variable}`}>
+    <html lang="en-CA" className={`${playfair.variable} ${sourceSans.variable}`}>
       <head>
         {schemas.map((schema, i) => (
           <script

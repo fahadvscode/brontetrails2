@@ -9,10 +9,7 @@ import RegisterForm from "./RegisterForm";
 
 export default function Hero() {
   return (
-    <section
-      id="register"
-      className="relative overflow-hidden bg-brand-deep pt-24 lg:pt-28"
-    >
+    <section id="register" className="relative min-h-[92vh] overflow-hidden">
       <Image
         src={IMAGES.aerial}
         alt="Aerial view of Bronte Trails freehold townhomes community in Oakville, Ontario"
@@ -22,41 +19,46 @@ export default function Hero() {
         sizes="100vw"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-brand-deep/90 via-brand-deep/80 to-brand-deep/60"
+        className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/40 to-ink/20"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto w-full max-w-content px-5 py-16 lg:px-8 lg:py-24">
-        <div className="grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+      <div className="relative flex min-h-[92vh] flex-col justify-end px-5 pb-12 pt-28 lg:px-8 lg:pb-16">
+        <div className="mx-auto w-full max-w-content">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
+            className="max-w-3xl"
           >
-            <div className="accent-line-light mb-6" />
-            <p className="section-eyebrow-light mb-4">Bronte Trails Towns</p>
-            <h1 className="font-display text-[2.25rem] leading-[1.1] text-white md:text-5xl lg:text-[3.5rem]">
+            <span className="chip mb-6 border border-white/20 bg-white/10 text-white">
+              <span className="h-2 w-2 rounded-full bg-accent-gold" aria-hidden="true" />
+              VIP Registration Open — Coming Soon
+            </span>
+
+            <h1 className="font-display text-[2.5rem] leading-[1.08] text-white md:text-5xl lg:text-[3.75rem]">
               Bronte Trails Townhomes in Oakville
             </h1>
-            <p className="mt-5 max-w-xl font-body text-lg font-medium text-white/90">
-              Pre-Construction Freehold Townhomes by Caivan Communities
-            </p>
-            <p className="mt-5 max-w-xl font-body text-base leading-relaxed text-white/80">
-              Coming soon to Bronte Road &amp; Upper Middle Road West — where
-              350 acres of Bronte Creek Provincial Park meet South Oakville&apos;s
-              most coveted address. Register now for VIP pricing, floor plans, and
-              first access before the public launch.
+            <p className="mt-5 max-w-xl font-body text-lg text-white/85 md:text-xl">
+              Pre-construction freehold townhomes by Caivan Communities — no condo
+              fees, park-side living, minutes to Bronte GO.
             </p>
 
-            <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href="#register" className="btn-primary lg:hidden">
+                Register for VIP Access
+              </a>
+              <a href="#overview" className="btn-secondary border-white/30 bg-white/10 text-white hover:border-white hover:bg-white hover:text-ink">
+                Explore the Community
+              </a>
+            </div>
+
+            <ul className="mt-10 flex flex-wrap gap-2">
               {heroBadges.map((badge) => (
-                <li
-                  key={badge.text}
-                  className="flex items-center gap-2.5 font-body text-xs font-medium uppercase tracking-wide text-white/75"
-                >
+                <li key={badge.text} className="chip text-white/90">
                   <SectionIcon
                     name={badge.icon as IconName}
-                    className="h-4 w-4 shrink-0 text-accent-gold"
+                    className="h-3.5 w-3.5 text-accent-gold"
                   />
                   {badge.text}
                 </li>
@@ -64,15 +66,14 @@ export default function Hero() {
             </ul>
           </motion.div>
 
+          {/* Mobile-only inline form */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.12 }}
-            className="card-surface p-6 shadow-elevated md:p-8"
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="surface mt-10 p-6 lg:hidden"
           >
-            <p className="section-eyebrow text-center">VIP Registration</p>
-            <div className="accent-line mx-auto my-4" />
-            <h2 className="mb-6 text-center font-display text-2xl text-brand-deep md:text-[1.75rem]">
+            <h2 className="mb-4 font-display text-xl text-ink">
               Get Priority Floor Plans &amp; Pricing
             </h2>
             <RegisterForm formType="hero" />

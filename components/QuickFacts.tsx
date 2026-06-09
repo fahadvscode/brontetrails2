@@ -4,21 +4,24 @@ export default function QuickFacts() {
   return (
     <section
       aria-label="Bronte Trails at a glance"
-      className="border-y border-stone-200 bg-white"
+      className="relative z-10 -mt-8 px-5 lg:px-8"
     >
-      <div className="mx-auto max-w-content px-5 py-8 lg:px-8">
-        <dl className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 lg:gap-y-5">
+      <div className="mx-auto max-w-content">
+        <div className="surface grid gap-px overflow-hidden rounded-2xl bg-ink/5 shadow-float md:grid-cols-3 lg:grid-cols-6">
           {quickFacts.map((fact) => (
-            <div key={fact.label} className="flex flex-col gap-1">
-              <dt className="font-body text-xs font-semibold uppercase tracking-wide text-brand">
+            <div
+              key={fact.label}
+              className="flex flex-col justify-center bg-white px-4 py-5 text-center md:py-6"
+            >
+              <dt className="font-body text-[10px] font-bold uppercase tracking-[0.12em] text-brand">
                 {fact.label}
               </dt>
-              <dd className="font-body text-sm font-medium text-brand-deep">
+              <dd className="mt-1.5 font-body text-sm font-semibold leading-snug text-ink">
                 {fact.value}
               </dd>
             </div>
           ))}
-        </dl>
+        </div>
       </div>
     </section>
   );
